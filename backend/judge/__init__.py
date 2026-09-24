@@ -253,8 +253,8 @@ class JudgeEngine:
                        compile_result["message"], max_time, max_mem)
         shutil.rmtree(workdir, ignore_errors=True)
 
-        # 4) 增量更新排行榜
-        if contest is not None and contest.get("visble", True):
+        # 4) 增量更新排行榜（可见性只控制访问，不影响计分：管理员可提交/查看隐藏赛榜单）
+        if contest is not None:
             user = {"id": user_id, "username": sub.get("username", ""),
                     "nickname": sub.get("nickname", "")}
             try:

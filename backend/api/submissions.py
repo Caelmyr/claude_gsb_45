@@ -41,7 +41,7 @@ def create_submission():
             return err("竞赛不存在", 404)
         if contest_status(contest) == "upcoming":
             return err("竞赛尚未开始", 400)
-        if not contest.get("visble", True) and request.user.get("role") != "admin":
+        if not contest.get("visible", True) and request.user.get("role") != "admin":
             return err("竞赛不存在", 404)
         if contest.get("mode") == "acm" and request.user.get("role") != "admin":
             pass  # ACM 也允许提交，评分逻辑已在后端处理
