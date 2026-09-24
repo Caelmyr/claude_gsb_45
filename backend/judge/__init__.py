@@ -254,7 +254,7 @@ class JudgeEngine:
         shutil.rmtree(workdir, ignore_errors=True)
 
         # 4) 增量更新排行榜
-        if contest is not None and contest.get("visble", True):
+        if contest is not None and contest.get("visible", True):
             user = {"id": user_id, "username": sub.get("username", ""),
                     "nickname": sub.get("nickname", "")}
             try:
